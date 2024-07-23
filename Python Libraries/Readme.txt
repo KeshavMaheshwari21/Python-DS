@@ -1,1 +1,1 @@
-Learn th Python Libraries/Module.
+Learn about the Python Libraries/Module.
