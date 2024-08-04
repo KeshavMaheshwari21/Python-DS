@@ -1,3 +1,8 @@
+REGRESSION :-
+
+Regression is a statistical technique used to model and analyze the relationships between a dependent variable (outcome) and one or more independent variables (predictors or features). The primary goal of regression is to understand how changes in the independent variables affect the dependent variable and to predict the value of the dependent variable based on the values of the independent variables.
+
+
 LINEAR REGRESSION :-
 
 Linear Regression is a statistical method used for predicting a continuous outcome variable (dependent variable) based on one or more input features (independent variables). The goal is to model the relationship between the features and the outcome variable with a linear equation.
