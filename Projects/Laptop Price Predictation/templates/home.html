@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+}
+
+.intro {
+    text-align: center;
+}
+
+.amazon-laptops {
+    margin-top: 2em;
+}
+
+.laptop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.laptop-item {
+    border: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+}
+
+.laptop-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 1em;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 0.5em 0;
+    }
+
+    .laptop-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+<body>
+    <header>
+        <h1>LAPTOP WORLD</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/project">Project</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Welcome to the LAPTOP WORLD</h2>
+            <p>Use our tool to predict the price of a laptop based on its features and specifications.</p>
+        </section>
+
+        <section class="amazon-laptops" style="margin-left: 150px;margin-right: 150px;">
+            <h2>Top Laptops on Amazon</h2>
+            <div class="laptop-grid">
+                <div class="laptop-item">
+                    <img src="laptop1.jpg" alt="Laptop 1">
+                    <h3>Laptop 1</h3>
+                    <p>$999</p>
+                    <a href="https://www.amazon.com/laptop1" target="_blank">View on Amazon</a>
+                </div>
+                <div class="laptop-item">
+                    <img src="laptop2.jpg" alt="Laptop 2">
+                    <h3>Laptop 2</h3>
+                    <p>$799</p>
+                    <a href="https://www.amazon.com/laptop2" target="_blank">View on Amazon</a>
+                </div>
+                <!-- Add more laptop items as needed -->
+            </div>
+            <br><br>
+            <div class="laptop-grid">
+                <div class="laptop-item">
+                    <img src="laptop1.jpg" alt="Laptop 1">
+                    <h3>Laptop 1</h3>
+                    <p>$999</p>
+                    <a href="https://www.amazon.com/laptop1" target="_blank">View on Amazon</a>
+                </div>
+                <div class="laptop-item">
+                    <img src="laptop2.jpg" alt="Laptop 2">
+                    <h3>Laptop 2</h3>
+                    <p>$799</p>
+                    <a href="https://www.amazon.com/laptop2" target="_blank">View on Amazon</a>
+                </div>
+                <!-- Add more laptop items as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer style="margin-bottom: -150px;">
+        <p>&copy; 2024 LAPTOP WORLD. All rights reserved.</p>
+    </footer>
+</body>
+</html>
