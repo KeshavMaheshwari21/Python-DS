@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #f4f4f4;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .header-title {
+            background-color: #007BFF;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 24px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            width: 1000px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea {
+            width: calc(100% - 20px);
+            height: 150px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            display: inline-block;
+            align-items: center;
+            text-align: center;
+            align-self: center;
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            width: 1040px;
+            bottom: 0;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+            margin-left: 250px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title"><h2>Email Classification System</h2></div>
+    </header>
+    
+    <div class="container">
+        <form action="{{ url_for('prediction') }}" method="post">
+            <h3><label for="emailContent">Enter Email Content:</label></h3>
+            <textarea id="emailContent" name="emailContent" required></textarea>
+            
+            <button type="submit" class="button">Classify Email</button>
+        </form>
+    </div>
+    
+    <footer>
+        <div class="footer-title"><p>&copy; 2024 Email Classification System. All rights reserved.</p></div>
+    </footer>
+</body>
+</html>
