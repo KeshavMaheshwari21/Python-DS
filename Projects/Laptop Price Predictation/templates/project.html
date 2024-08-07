@@ -10,13 +10,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .form-container {
+            margin: 2em auto;
+            max-width: 900px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-secondary {
+            margin-right: 1em;
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                margin: 1em;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <header>
+        <h1>LAPTOP WORLD</h1>
+    </header>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Customer Satisfaction Project</a>
+            <a class="navbar-brand" href="#">LAPTOP WORLD</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -35,84 +91,92 @@
         </div>
     </nav>
 
-    <div class="container mt-5 pt-5">
-        <h2 class="text-center mb-4">Enter the Data for Prediction</h2>
+    <div class="container form-container mt-5 pt-5" style="margin-top: -50px;">
+        <h2 class="text-center mb-4" style="margin-top: -50px;">Enter the Data for Prediction</h2>
 
         <form action="{{ url_for('prediction') }}" method="post" id="contact-form">
-            <div class="mb-3">
-                <label for="ram" class="form-label">RAM (GB):</label>
-                <input type="number" name="ram" id="ram" class="form-control" required min="1" step="any">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="ram" class="form-label">RAM (GB):</label>
+                    <input type="number" name="ram" id="ram" class="form-control" required min="1" step="any">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="weight" class="form-label">Weight (kg):</label>
+                    <input type="number" name="weight" id="weight" class="form-control" required min="0" step="any">
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label for="weight" class="form-label">Weight (kg):</label>
-                <input type="number" name="weight" id="weight" class="form-control" required min="0" step="any">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="screen-type" class="form-label">Screen Type:</label>
+                    <select id="screen-type" name="screen_type" class="form-select" required>
+                        <option value="touchscreen">Touch Screen</option>
+                        <option value="ips">IPS</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="company" class="form-label">Company Of Laptop:</label>
+                    <select id="company" name="company" class="form-select" required>
+                        <option value="acer">Acer</option>
+                        <option value="apple">Apple</option>
+                        <option value="asus">Asus</option>
+                        <option value="dell">Dell</option>
+                        <option value="hp">HP</option>
+                        <option value="lenovo">Lenovo</option>
+                        <option value="msi">MSI</option>
+                        <option value="toshiba">Toshiba</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label for="screen-type" class="form-label">Screen Type:</label>
-                <select id="screen-type" name="screen_type" class="form-select" required>
-                    <option value="touchscreen">Touch Screen</option>
-                    <option value="ips">IPS</option>
-                    <option value="other">Other</option>
-                </select>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="laptop-type" class="form-label">Type of Laptop:</label>
+                    <select id="laptop-type" name="laptop_type" class="form-select" required>
+                        <option value="in21">2 in 1 Convertible</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="netbook">Netbook</option>
+                        <option value="notebook">Notebook</option>
+                        <option value="ultrabook">Ultrabook</option>
+                        <option value="workstation">Workstation</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="opsys" class="form-label">Operating System:</label>
+                    <select id="opsys" name="opsys" class="form-select" required>
+                        <option value="linux">Linux</option>
+                        <option value="mac">Mac</option>
+                        <option value="windows">Windows</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label for="company" class="form-label">Company Of Laptop:</label>
-                <select id="company" name="company" class="form-select" required>
-                    <option value="acer">Acer</option>
-                    <option value="apple">Apple</option>
-                    <option value="asus">Asus</option>
-                    <option value="dell">Dell</option>
-                    <option value="hp">HP</option>
-                    <option value="lenovo">Lenovo</option>
-                    <option value="msi">MSI</option>
-                    <option value="toshiba">Toshiba</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="cpu" class="form-label">CPU Type:</label>
+                    <select id="cpu" name="cpu" class="form-select" required>
+                        <option value="amd">AMD</option>
+                        <option value="i3">Intel Core i3</option>
+                        <option value="i5">Intel Core i5</option>
+                        <option value="i7">Intel Core i7</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
 
-            <div class="mb-3">
-                <label for="laptop-type" class="form-label">Type of Laptop:</label>
-                <select id="laptop-type" name="laptop_type" class="form-select" required>
-                    <option value="in21">2 in 1 Convertible</option>
-                    <option value="gaming">Gaming</option>
-                    <option value="netbook">Netbook</option>
-                    <option value="notebook">Notebook</option>
-                    <option value="ultrabook">Ultrabook</option>
-                    <option value="workstation">Workstation</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="opsys" class="form-label">Operating System:</label>
-                <select id="opsys" name="opsys" class="form-select" required>
-                    <option value="linux">Linux</option>
-                    <option value="mac">Mac</option>
-                    <option value="windows">Windows</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="cpu" class="form-label">CPU Type:</label>
-                <select id="cpu" name="cpu" class="form-select" required>
-                    <option value="amd">AMD</option>
-                    <option value="i3">Intel Core i3</option>
-                    <option value="i5">Intel Core i5</option>
-                    <option value="i7">Intel Core i7</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="gpu" class="form-label">GPU Type:</label>
-                <select id="gpu" name="gpu" class="form-select" required>
-                    <option value="amd">AMD</option>
-                    <option value="intel">Intel</option>
-                    <option value="nvidia">Nvidia</option>
-                </select>
+                <div class="col-md-6">
+                    <label for="gpu" class="form-label">GPU Type:</label>
+                    <select id="gpu" name="gpu" class="form-select" required>
+                        <option value="amd">AMD</option>
+                        <option value="intel">Intel</option>
+                        <option value="nvidia">Nvidia</option>
+                    </select>
+                </div>
             </div>
 
             <div class="d-flex justify-content-between">
@@ -122,10 +186,8 @@
         </form>
     </div>
 
-    <footer class="footer bg-light text-center py-3">
-        <div class="container">
-            <p class="mb-0">&copy; Customer Satisfaction Project.</p>
-        </div>
+    <footer>
+        <p>&copy; 2024 LAPTOP WORLD. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
