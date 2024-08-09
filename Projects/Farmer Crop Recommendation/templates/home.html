@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Friends</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Inline CSS corrections for buttons */
+        .btn-primary {
+            padding: 10px 20px;
+            color: antiquewhite;
+            background-color: dodgerblue;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: rgb(10, 116, 222);
+            text-decoration: none;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .welcome-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .welcome-text {
+            max-width: 50%;
+            text-align: left;
+        }
+
+        .welcome-heading {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .welcome-heading span {
+            color: rgb(31, 185, 31)
+        }
+
+        .welcome-image {
+            width: 500px;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header style="margin-top: -85px; width: 1450px;">
+        <div class="logo" style="display: flex;">
+            <img src="/static/logo.jpg" alt="Farmer Friends" style="border-radius: 50%; width: 70px; height: 70px;">
+            <h1 style="color: black; margin-left: 10px; margin-top: 18px;"><span style="color: rgb(31, 185, 31);">Farmer</span> Friends</h1>
+        </div>
+    </header>
+    <div class="container">
+        <main>
+            <section id="home">
+                <div class="welcome-section">
+                    <div class="welcome-text" style="margin-right: -100px;">
+                        <h1 class="welcome-heading" style="margin-left: 100px;">How can I <span>Help</span> you?</h1>
+                        <div class="btn-container">
+                            <a class="btn-primary" href="/project" role="button" style="background-color: rgb(31, 185, 31);margin-left: 220px;">Enter Soil Data</a>
+                        </div>
+                    </div>
+                    <img src="/static/robot.png" alt="" class="welcome-image" style="margin-left: -100px;width: 370px;">
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer style="margin-top: 30px;color: black;">
+        &copy; 2024 Farmer Friends. All rights reserved.
+    </footer>
+</body>
+</html>
