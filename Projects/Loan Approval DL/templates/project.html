@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Website</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="/static/logo.png" alt="Loan Company Logo" class="logo" style="margin-left: -119px;">
+            <h1 style="margin-left: -616px;">EASY LOAN</h1>
+            <nav style="margin-left: 100px;">
+                <ul >
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/records">Records</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+    <main>
+        <section class="form-section" style="margin-top: 75px;margin-bottom: 71px;">
+            <div class="form-container">
+                <form id="loanForm" action="{{ url_for('submit') }}" method="post">
+                    <h1 style="text-align: center;margin-top: -10px;font-size: 1.7rem;margin-bottom: 20px;">Enter the Details </h1>
+                    <div class="form-step" id="step1">
+                        <label for="name">What is your name?</label>
+                        <input type="text" id="name" name="name" required>
+                        <a href="/" class="btn" style="margin-top: 50px;text-decoration: none;margin-left: 20%;">Back</a>
+                        <button type="button" class="btn" onclick="nextStep(2)" style="margin-left: 150px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step2">
+                        <label for="no_of_dependents">Number of dependents:</label>
+                        <input type="number" id="no_of_dependents" name="no_of_dependents" required>
+                        <button type="button" class="btn" onclick="prevStep(1)" style="margin-left: 20%;">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(3)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step3">
+                        <label for="income_annum">Annual Income:</label>
+                        <input type="number" id="income_annum" name="income_annum" required>
+                        <button type="button" class="btn" onclick="prevStep(2)" style="margin-left: 20%;">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(4)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step4">
+                        <label for="loanAmount">How much loan do you need?</label>
+                        <input type="number" id="loanAmount" name="loanAmount" required>
+                        <button type="button" class="btn" onclick="prevStep(3)" style="margin-left: 20%;">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(5)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step5">
+                        <label for="loan_term">Loan Term (years):</label>
+                        <input type="number" id="loan_term" name="loan_term" required>
+                        <button type="button" class="btn" onclick="prevStep(4)" style="margin-left: 20%;">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(6)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step6">
+                        <label for="cibil_score">CIBIL Score:</label>
+                        <input type="number" id="cibil_score" name="cibil_score" required>
+                        <button type="button" class="btn" onclick="prevStep(5)" style="margin-left: 20%;">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(7)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step7">
+                        <label for="residential_assets_value">Value of Residential Assets:</label>
+                        <input type="number" id="residential_assets_value" name="residential_assets_value" required>
+                        <button type="button" class="btn" onclick="prevStep(6)" style="margin-left: 20%;">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(8)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step8">
+                        <label for="commercial_assets_value">Value of Commercial Assets:</label>
+                        <input type="number" id="commercial_assets_value" name="commercial_assets_value" required>
+                        <button type="button" class="btn" onclick="prevStep(7)" style="margin-left: 20%;">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(9)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step9">
+                        <label for="luxury_assets_value">Value of Luxury Assets:</label>
+                        <input type="number" id="luxury_assets_value" name="luxury_assets_value" required>
+                        <button type="button" class="btn" onclick="prevStep(8)" style="margin-left: 20%;">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(10)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step10">
+                        <label for="bank_asset_value">Value of Bank Assets:</label>
+                        <input type="number" id="bank_asset_value" name="bank_asset_value" required>
+                        <button type="button" class="btn" onclick="prevStep(9)" style="margin-left: 20%;">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(11)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step11">
+                        <label for="education">Education:</label>
+                        <select id="education" name="education">
+                            <option value="1">Not Graduate</option>
+                            <option value="0">Graduate</option>
+                        </select>
+                        <button type="button" class="btn" onclick="prevStep(10)" style="margin-left: 20%">Previous</button>
+                        <button type="button" class="btn" onclick="nextStep(12)" style="margin-left: 120px;">Next</button>
+                    </div>
+                    <div class="form-step" id="step12">
+                        <label for="self_employed">Are you self-employed?</label>
+                        <select id="self_employed" name="self_employed">
+                            <option value="1">No</option>
+                            <option value="0">Yes</option>
+                        </select>
+                        <button type="button" class="btn" onclick="prevStep(11)" style="margin-left: 20%">Previous</button>
+                        <button type="submit" class="btn" style="margin-left: 120px;">Submit</button>
+                    </div>
+                </form>
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer style="background-color: #fff;color: #080808;">
+        <div class="container">
+            <p style="margin-left: 40%;">&copy; 2024 Loan Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 12;
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach((el) => {
+                el.classList.remove('active');
+            });
+            document.getElementById(`step${step}`).classList.add('active');
+            updateProgress(step);
+        }
+
+        function nextStep(step) {
+            if (step <= totalSteps) {
+                currentStep = step;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep(step) {
+            if (step >= 1) {
+                currentStep = step;
+                showStep(currentStep);
+            }
+        }
+
+        function updateProgress(step) {
+            const progress = (step / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+
+        // Initialize form
+        showStep(currentStep);
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/static/logo.png') no-repeat center center fixed;
+            background-size: 370px ;
+            background-position-x: 580px;
+            background-position-y: 170px;
+            background-color: #f3f3f3;
+            
+        }
+
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            margin-top: 61px;
+            margin-bottom: 65px;
+            padding: 40px 0;
+            background-color: rgba(224, 224, 224, 0.9); /* Semi-transparent form background */
+            width: 600px;
+            height: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        label {
+            width: 101%;
+            margin-top: 50px;
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input {
+            width: 97.5%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            width: 101%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            background-color: #4efb27;
+            color: #080808;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 70px;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #3be215;
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            margin-top: 20px;
+            height: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #4efb27;
+            width: 0;
+            border-radius: 5px;
+            transition: width 0.9s;
+        }
+
+    </style>
+</body>
+</html>
