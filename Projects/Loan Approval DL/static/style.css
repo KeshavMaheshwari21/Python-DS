@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #9cff62;
+    color: #000000;
+}
+
+header h1{
+    margin-left: -835px;
+    font-size: 2rem;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1480px;
+}
+
+.logo {
+    height: 70px;
+    width: 80px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.19rem;
+}
+
+.hero {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4efb27;
+    color: #0f0e0e;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #3be215;
+
+}
+
+.how-it-works {
+    padding: 40px 0;
+    background-color: #f4f4f4;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.how-it-works .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.how-it-works h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.how-it-works ol {
+    list-style-type: decimal;
+    margin: 0;
+    padding: 0;
+}
+
+.how-it-works li {
+    margin-bottom: 20px;
+}
+
+.how-it-works h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.how-it-works p {
+    font-size: 1em;
+    color: #666;
+}
+
+
+.features {
+    display: flex;
+    justify-content: center; /* Center the feature boxes horizontally */
+    padding: 20px 0;
+    background-color: #f4f4f4;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.features .feature {
+    width: calc(33.33% - 40px); /* Adjust width to account for the margin */
+    margin: 0 20px; /* Adjust margin to fit the 170px total margin */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature i {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.feature h1 {
+    margin: 10px 0;
+    font-size: 1.7em;
+}
+
+.feature p {
+    font-size: 1em;
+    color: #666;
+}
+
+.feature:hover {
+    transform: translateY(-45px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature:hover i {
+    color: #007bff;
+}
+
+
+
+footer {
+    background-color: #ffffff;
+    color: #151515;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
