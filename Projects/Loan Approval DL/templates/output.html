@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Website</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="/static/logo.png" alt="Loan Company Logo" class="logo" style="margin-left: -119px;">
+            <h1 style="margin-left: -616px;">EASY LOAN</h1>
+            <nav style="margin-left: 100px;">
+                <ul >
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/records">Records</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+    <main>
+        <section class="form-section" style="margin-top: 75px;margin-bottom: 71px;">
+            <div class="form-container">
+                <form id="loanForm">
+                    <h1 style="text-align: center;margin-top: -10px;font-size: 1.7rem;margin-bottom: 20px;">Your Loan</h1>
+                    <h1  class="{{ 'Approved' if output == 'Approved' else 'Rejected' }}" style="text-align: center;font-size: 2.5rem;margin-top: 100px;">
+                        <span>{{ output }}</span>
+                    </h1>
+                    <a href="/" class="btn" style="margin-top: 50px;text-decoration: none;margin-left: 43.5%;">Back</a>
+
+                </form>
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer style="background-color: #fff;color: #080808;">
+        <div class="container">
+            <p style="margin-left: 40%;">&copy; 2024 Loan Company. All rights reserved.</p>
+        </div>
+    </footer>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/static/logo.png') no-repeat center center fixed;
+            background-size: 370px ;
+            background-position-x: 580px;
+            background-position-y: 170px;
+            background-color: #f3f3f3;
+            
+        }
+
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            margin-top: 61px;
+            margin-bottom: 65px;
+            padding: 40px 0;
+            background-color: rgba(224, 224, 224, 0.9); /* Semi-transparent form background */
+            width: 600px;
+            height: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .Approved {
+            color: green;
+        }
+
+        .Rejected {
+            color: red;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            background-color: #4efb27;
+            color: #080808;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 70px;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #3be215;
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+
+    </style>
+</body>
+</html>
