@@ -1,4 +1,4 @@
-# Cancer Detection using Logistic Regression
+# Cancer Detection 
 
 ## Overview
 
