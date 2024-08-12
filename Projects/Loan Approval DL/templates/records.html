@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Website</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        thead {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+        .hero-content .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4CAF50;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .hero-content .btn:hover {
+            background-color: #45a049;
+        }
+        footer p {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="/static/logo.png" alt="Loan Company Logo" class="logo">
+            <h1>EASY LOAN</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/records">Records</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Records</h1>
+            </div>
+        </section>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>No of Dependents</th>
+                    <th>Income Annum</th>
+                    <th>Loan Amount</th>
+                    <th>Loan Term</th>
+                    <th>CIBIL Score</th>
+                    <th>Residential Assets Value</th>
+                    <th>Commercial Assets Value</th>
+                    <th>Luxury Assets Value</th>
+                    <th>Bank Asset Value</th>
+                    <th>Education</th>
+                    <th>Self Employed</th>
+                    <th>Prediction</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record[0] }}</td>
+                    <td>{{ record[1] }}</td>
+                    <td>{{ record[2] }}</td>
+                    <td>{{ record[3] }}</td>
+                    <td>{{ record[4] }}</td>
+                    <td>{{ record[5] }}</td>
+                    <td>{{ record[6] }}</td>
+                    <td>{{ record[7] }}</td>
+                    <td>{{ record[8] }}</td>
+                    <td>{{ record[9] }}</td>
+                    <td>{{ record[10] }}</td>
+                    <td>{{ record[11] }}</td>
+                    <td>{{ record[12] }}</td>
+                    <td>{{ record[13] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <section style="margin-bottom: 40px;margin-top: 40px;">
+            <a href="/" class="btn" style="margin-left: 47.5%;">Back</a>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p style="margin-left: 40%;">&copy; 2024 Loan Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
