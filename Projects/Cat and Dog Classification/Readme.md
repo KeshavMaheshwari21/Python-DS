@@ -4,15 +4,6 @@
 
 This project demonstrates how to build and train a Convolutional Neural Network (CNN) to classify images of dogs and cats. The CNN model is trained on a dataset of dog and cat images to distinguish between the two classes with high accuracy.
 
-## Table of Contents
-
-- [Project Structure](#project-structure)
-- [Dependencies](#dependencies)
-- [Setup](#setup)
-- [Usage](#usage)
-- [Results](#results)
-- [License](#license)
-
 ## Dependencies
 
 Ensure you have the following Python packages installed:
