@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog and Cat Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: rgb(101, 199, 255);
+            /* Semi-transparent background */
+            color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: black;
+        }
+
+        .container {
+            margin-top: 120px;
+            /* Adjusted to create space below the fixed header */
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Semi-transparent container */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            /* Slightly more opaque to improve readability */
+            padding: 20px;
+            border-radius: 8px;
+            /* Semi-transparent container */
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 0 auto 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            /* Slightly more opaque to match form */
+            cursor: pointer;
+            height: 150px;
+            width: 250px;
+            margin-top: 200px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 2.2em;
+            color: #333;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            visibility: hidden;
+            /* Hide the file upload button text */
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/static/logo.png" alt="Dog Cat Classification Logo">
+        <h1>Dog and Cat Classification</h1>
+    </header>
+        <h1 style="margin-top: 200px;margin-left: 450px;">Upload File to Predict :</h1>
+        <form action="/submit" method="post" enctype="multipart/form-data" style="margin-left: 450px ;margin-top: -200px;">
+            <input type="file" name="file" accept="image/*" required>
+            <input type="submit" value="Upload" style="margin-left: 95px;">
+        </form>
+        {% if result %}
+        <div id="result" style="margin-left: 450px;">Prediction: {{ result }}</div>
+        {% endif %}
+        <img src="/static/back.png" alt="" style="margin-left: -800px;margin-top: -330px;width: 700px;">
+        <img src="/static/corner.png" alt="" style="margin-left: 1150px;margin-top: -400px;">
+</body>
+
+</html>
