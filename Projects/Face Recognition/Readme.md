@@ -15,8 +15,7 @@ This project is a simple real-time face detection system using Python and OpenCV
 
 ### Installation
 
-1. Install Python from the [official website](https://www.python.org/downloads/).
-2. Install the OpenCV library by running:
+   Install the OpenCV library by running:
    ```bash
    pip install opencv-python
 
