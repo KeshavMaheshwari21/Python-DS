@@ -1,1 +1,0 @@
-style and photos etc
